@@ -51,7 +51,7 @@ int read_parameters(int argc, char **argv, int *to, int *from){
 }
 int array_filtration(const int *arr, size_t array_size, int to, int from, int *filtered_array, size_t *filtered_array_size){
     int filtered_array_size_count = 0;
-    for (int i = 0; i < array_size; i++){
+    for (size_t i = 0; i < array_size; i++){
         if (arr[i] > from && arr[i] < to){
             filtered_array[filtered_array_size_count++] = arr[i];
         } else if (arr[i] <= from){
@@ -82,7 +82,7 @@ int array_filtration(const int *arr, size_t array_size, int to, int from, int *f
     return 0;
 }
 int recording_filtered_array(const int *filtered_array, size_t filtered_array_size, int *array_for_compare){
-    for (int i = 0; i < filtered_array_size; ++i){
+    for (size_t i = 0; i < filtered_array_size; ++i){
         array_for_compare[i] = filtered_array[i];
     }
     return 0;
@@ -90,7 +90,7 @@ int recording_filtered_array(const int *filtered_array, size_t filtered_array_si
 int sorting_filtered_array(int *filtered_array, size_t filtered_array_size);
 int comparing_arrays(const int *filtered_array, size_t filtered_array_size, const int *array_for_compare){
     int permutation_counter = 0;
-    for (int i = 0; i < filtered_array_size; ++i){
+    for (size_t i = 0; i < filtered_array_size; ++i){
         if (filtered_array[i] != array_for_compare[i]){
             permutation_counter++;
         }
